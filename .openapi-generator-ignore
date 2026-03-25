@@ -6,3 +6,6 @@ src/mailmate_api.cr
 bin/generate
 .github/
 shard.yml
+README.md
+git_push.sh
+openapitools.json

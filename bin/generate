@@ -14,14 +14,9 @@ SWAGGER_PATH="${SWAGGER_PATH:-$REPO_ROOT/../mailmate-web/swagger/v1/swagger.yaml
 echo "→ Generating Crystal SDK from: $SWAGGER_PATH"
 
 npx --yes @openapitools/openapi-generator-cli generate \
-  --input-spec  "$SWAGGER_PATH" \
+  --input-spec "$SWAGGER_PATH" \
   --generator-name crystal \
   --output "$REPO_ROOT" \
-  --additional-properties \
-    gemName=mailmate_api,\
-moduleName=MailMateAPI,\
-gemVersion=0.1.0,\
-gemHomepage=https://github.com/aluminumio/mailmate-crystal-sdk,\
-gemSummary="Crystal SDK for the MailMate API"
+  --additional-properties "gemName=mailmate_api,moduleName=MailMateAPI,gemVersion=0.1.0,gemHomepage=https://github.com/Win-hhm/mailmate-crystal-sdk"
 
 echo "✓ Done. Review changes and commit."
