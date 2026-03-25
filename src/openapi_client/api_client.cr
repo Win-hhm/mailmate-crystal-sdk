@@ -62,6 +62,7 @@ module MailMateAPI
       auth_names.each do |auth_name|
         auth_setting = @config.auth_settings[auth_name]
         next unless auth_setting
+        next if auth_setting[:value].empty?
         case auth_setting[:in]
         when "header" then header_params[auth_setting[:key]] = auth_setting[:value]
         when "query"  then query_params[auth_setting[:key]] = auth_setting[:value]

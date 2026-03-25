@@ -14,7 +14,7 @@ module MailMateAPI
     include YAML::Serializable
 
     # Optional properties
-    @[JSON::Field(key: "current_page", type: Int32?, nillable: true, emit_null: false)]
+    @[JSON::Field(key: "page", type: Int32?, nillable: true, emit_null: false)]
     property current_page : Int32?
 
     @[JSON::Field(key: "total_pages", type: Int32?, nillable: true, emit_null: false)]

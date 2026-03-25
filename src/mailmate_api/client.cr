@@ -29,7 +29,7 @@ module MailMate
     end
 
     def list_inboxes_flat
-      inboxes_api.list_inboxes_flat(token, client_id, uid)
+      inboxes_api.list_inboxes(token, client_id, uid)
     end
 
     # ── Items (postal mails) ───────────────────────────────────────────────
@@ -72,7 +72,7 @@ module MailMate
       uri = URI.parse(@credentials.base_url)
       MailMateAPI::Configuration.new.tap do |c|
         c.scheme = uri.scheme || "https"
-        c.host   = uri.host   || "app.mailmate.jp"
+        c.host   = "#{uri.host || "app.mailmate.jp"}#{uri.port ? ":#{uri.port}" : ""}"
       end
     end
   end

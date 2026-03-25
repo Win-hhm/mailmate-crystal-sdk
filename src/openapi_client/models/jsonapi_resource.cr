@@ -14,8 +14,8 @@ module MailMateAPI
     include YAML::Serializable
 
     # Required properties
-    @[JSON::Field(key: "id", type: String, nillable: false, emit_null: false)]
-    property id : String
+    @[JSON::Field(key: "id", type: Int32, nillable: false, emit_null: false)]
+    property id : Int32
 
     @[JSON::Field(key: "type", type: String, nillable: false, emit_null: false)]
     property _type : String
@@ -25,7 +25,7 @@ module MailMateAPI
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
-    def initialize(@id : String, @_type : String, @attributes : JSON::Any)
+    def initialize(@id : Int32, @_type : String, @attributes : JSON::Any)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
