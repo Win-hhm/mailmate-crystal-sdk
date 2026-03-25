@@ -59,14 +59,14 @@ module MailMate
       auth_api.sign_out(token, client_id, uid)
     end
 
-    private def token     = @credentials.access_token
-    private def client_id = @credentials.client_id
-    private def uid       = @credentials.uid
+    private def token;     @credentials.access_token; end
+    private def client_id; @credentials.client_id;   end
+    private def uid;       @credentials.uid;          end
 
-    private def api_client  = MailMateAPI::ApiClient.new(build_config)
-    private def auth_api    = MailMateAPI::AuthApi.new(api_client)
-    private def inboxes_api = MailMateAPI::InboxesApi.new(api_client)
-    private def items_api   = MailMateAPI::ItemsApi.new(api_client)
+    private def api_client;  MailMateAPI::ApiClient.new(build_config);    end
+    private def auth_api;    MailMateAPI::AuthApi.new(api_client);         end
+    private def inboxes_api; MailMateAPI::InboxesApi.new(api_client);      end
+    private def items_api;   MailMateAPI::ItemsApi.new(api_client);        end
 
     private def build_config
       uri = URI.parse(@credentials.base_url)
