@@ -139,6 +139,10 @@ module MailMateAPI
 
       update_params_for_auth! header_params, query_params, cookie_params, auth_names
 
+      if (user = @config.username) && !user.empty?
+        header_params["Authorization"] = @config.basic_auth_token
+      end
+
       if !post_body.nil? && !post_body.empty?
         # use JSON string in the payload
         form_or_body = post_body

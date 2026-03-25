@@ -71,8 +71,10 @@ module MailMate
     private def build_config
       uri = URI.parse(@credentials.base_url)
       MailMateAPI::Configuration.new.tap do |c|
-        c.scheme = uri.scheme || "https"
-        c.host   = "#{uri.host || "app.mailmate.jp"}#{uri.port ? ":#{uri.port}" : ""}"
+        c.scheme   = uri.scheme || "https"
+        c.host     = "#{uri.host || "mailmate.jp"}#{uri.port ? ":#{uri.port}" : ""}"
+        c.username = uri.user if uri.user
+        c.password = uri.password if uri.password
       end
     end
   end

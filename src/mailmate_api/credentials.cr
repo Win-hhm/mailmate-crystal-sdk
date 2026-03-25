@@ -9,9 +9,9 @@ module MailMate
     property access_token : String
     property client_id : String
     property uid : String
-    property base_url : String = "https://app.mailmate.jp"
+    property base_url : String = "https://mailmate.jp"
 
-    def initialize(@access_token : String, @client_id : String, @uid : String, @base_url : String = "https://app.mailmate.jp")
+    def initialize(@access_token : String, @client_id : String, @uid : String, @base_url : String = "https://mailmate.jp")
     end
 
     def self.path : Path

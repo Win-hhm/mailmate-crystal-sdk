@@ -130,7 +130,7 @@ module MailMateAPI
     # Create a new `Configuration`.
     def initialize
       @scheme = "https"
-      @host = "app.mailmate.jp"
+      @host = "mailmate.jp"
       @base_path = ""
       @server_index = 0
       @server_operation_index = {} of Symbol => String
@@ -243,7 +243,7 @@ module MailMateAPI
     def server_settings
       [
         {
-          url: "https://app.mailmate.jp",
+          url: "https://mailmate.jp",
           description: "Production",
         },
         {
