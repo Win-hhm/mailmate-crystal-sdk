@@ -8,6 +8,8 @@ authors:
 license: MIT
 
 dependencies:
+  any_hash:
+    github: Sija/any_hash.cr
   crest:
     github: mamantoha/crest
     version: ~> 1.3
